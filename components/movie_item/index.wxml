@@ -1,0 +1,9 @@
+<!--components/movie_item/index.wxml-->
+<view class="movie_container" bindtap="onToDetail">
+  <image class="img" src="{{movie.images.large}}"></image>
+  <text class="title">{{movie.title}}</text>
+  <view class="rating">
+    <c-star stars="{{movie.rating.stars}}"/>
+    <text class="score">{{movie.rating.average}}</text>
+  </view>
+</view>

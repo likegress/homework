@@ -1,0 +1,17 @@
+/* pages/more_movie/more_movie.wxss */
+.list {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30rpx;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.list::after {
+  content: "";
+  display: block;
+  width: 210rpx;
+}
+.list c-movie {
+  margin-bottom: 20rpx;
+}

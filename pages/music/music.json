@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "c-music": "/components/music_item"
+  }
+}

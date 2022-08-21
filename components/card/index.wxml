@@ -1,0 +1,31 @@
+<!--components/card/index.wxml-->
+<wxs src="/utils/util.wxs" module="util"></wxs>
+<!-- 每条朋友圈组件 -->
+<view class="card_container">
+  <view class="header">
+    <image src="{{cardData.avatarUrl}}" class="avatar"></image>
+    <view class="name_date">
+      <text class="name">{{cardData.nickName}}</text>
+      <text class="date">{{util.setTime(cardData.createTime)}}</text>
+    </view>
+  </view>
+  <!-- 文案 -->
+  <view class="content">{{cardData.content}}</view>
+  <!-- 配图 -->
+  <view class="img_container">
+    <block wx:for="{{cardData.imgArr}}" wx:key="*this">
+      <image src="{{item}}" class="img"></image>
+    </block>
+  </view>
+  <!-- 底部操作 -->
+  <view class="ctrl">
+    <view class="comment">
+      <text class="iconfont icon-pinglun"></text>
+      <text>评论</text>
+    </view>
+    <view class="like">
+      <text class="iconfont icon-dianzan"></text>
+      <text>点赞</text>
+    </view>
+  </view>
+</view>

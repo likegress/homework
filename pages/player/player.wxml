@@ -1,0 +1,20 @@
+<!--pages/player/player.wxml-->
+<!-- 写死的样式写在wxss中,需要根据数据动态改变的样式,使用内联样式 -->
+<view class="container" style="background:url({{picUrl}}) no-repeat; background-size: 100% 100%;"></view>
+<view class="player_mask"></view>
+
+<view class="player_info">
+  <view class="player_disc {{isPlaying?'play':''}}">
+    <image class="player_img rotation {{isPlaying?'':'rotation_paused'}}" src="{{picUrl}}"></image>
+  </view>
+  <!-- 进度条 -->
+  <view class="progress_bar">
+    <c-progress_bar bind:play="onPlay" />
+  </view>
+  <!-- 控制面板 -->
+  <view class="control">
+    <text bindtap="onPrev" class="iconfont icon-shangyishoushangyige"></text>
+    <text bindtap="onMusic" class="iconfont {{isPlaying?'icon-24gl-pauseCircle':'icon-24gl-playCircle'}}"></text>
+    <text bindtap="onNext" class="iconfont icon-xiayigexiayishou"></text>
+  </view>
+</view>

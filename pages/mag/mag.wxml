@@ -1,0 +1,8 @@
+<movable-area class="area">
+  <image src="/images/25.jpg" class="smallImg"></image>
+  <movable-view bindchange="onDrag" direction="all" class="move" style="width: {{moveW}}px;height: {{moveH}}px;"></movable-view>
+</movable-area>
+
+<view class="displayer">
+  <image src="/images/25.jpg" class="bigImg" style="transform: translate({{bigImgLeft}}px,{{bigImgTop}}px);"></image>
+</view>

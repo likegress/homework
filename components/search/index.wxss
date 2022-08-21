@@ -1,0 +1,11 @@
+/* components/search/index.wxss */
+.search_container {
+  margin: 0 30rpx;
+}
+.search_item {
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.search_item:only-child {
+  border: none;
+}

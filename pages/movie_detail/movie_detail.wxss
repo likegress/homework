@@ -1,0 +1,86 @@
+/* pages/movie_detail/movie_detail.wxss */
+.header {
+  width: 100%;
+  position: relative;
+}
+.header .img {
+  width: 100%;
+  filter: blur(10px);
+}
+.info_box {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 30rpx;
+}
+.right_img {
+  width: 200rpx;
+  height: 240rpx;
+  position: absolute;
+  right: 20rpx;
+  bottom: -20rpx;
+}
+.info_box .title {
+  font-size: 36rpx;
+  color: #fff;
+  line-height: 40rpx;
+}
+.year {
+  color: #fff;
+  margin: 20rpx 0;
+  font-size: 30rpx;
+}
+.like {
+  color: #999;
+}
+.like text {
+  color: red;
+  font-size: 28rpx;
+}
+.detail {
+  margin: 20rpx 30rpx;
+}
+.detail .title {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.detail .box {
+  display: flex;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.box text {
+  margin-right: 30rpx;
+}
+.wrap {
+  padding: 30rpx;
+  border-top: 1rpx solid #999;
+}
+.wrap .title {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 30rpx;
+}
+.summary {
+  font-size: 28rpx;
+  color: #999;
+}
+.casts_box {
+  display: flex;
+}
+.casts_box .cast {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20rpx;
+}
+.casts_box .cast image {
+  width: 200rpx;
+  height: 240rpx;
+}
+.casts_box .cast text {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  text-align: center;
+}

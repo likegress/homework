@@ -1,0 +1,18 @@
+<wxs src="/utils/util.wxs" module="util"></wxs>
+<template name="news">
+  <view  bindtap="toDetail" mark:postId="{{postId}}" class="news_container">
+    <view class="avatar_date">
+      <image src="{{avatar}}"></image>
+      <text>{{date}}</text>
+    </view>
+    <view class="title">{{title}}</view>
+    <image src="{{imgSrc}}" class="img"></image>
+    <view class="summary">{{util.sliceStr(content,15)}}</view>
+    <view class="review">
+      <image src="/imgs/icon/chat.png"></image>
+      <text>{{collection}}</text>
+      <image src="/imgs/icon/view.png"></image>
+      <text>{{reading}}</text>
+    </view>
+  </view>
+</template>

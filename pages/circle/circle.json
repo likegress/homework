@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-card": "/components/card"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

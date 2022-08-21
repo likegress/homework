@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/news/news",
+    "pages/news_detail/news_detail",
+    "pages/movie/movie",
+    "pages/more_movie/more_movie",
+    "pages/movie_detail/movie_detail",
+    "pages/singer/singer",
+    "pages/canvas/canvas",
+    "pages/city/city",
+    "pages/music/music",
+    "pages/player/player",
+    "pages/mag/mag",
+    "pages/circle/circle",
+    "pages/publish/publish"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#405f81",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#f00",
+    "list": [
+      {
+        "pagePath": "pages/news/news",
+        "text": "阅读",
+        "iconPath": "/imgs/tab/dianying.png",
+        "selectedIconPath": "/imgs/tab/dianying_hl.png"
+      },
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "/imgs/tab/yuedu.png",
+        "selectedIconPath": "/imgs/tab/yuedu_hl.png"
+      }
+    ]
+  },
+  "requiredBackgroundModes": ["audio"],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

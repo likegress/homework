@@ -1,0 +1,23 @@
+<view wx:if="{{!showSearch}}" class="container" bindtap="onTap">
+  <view class="search_box">
+    <icon type="search" size="20"></icon>
+  </view>
+  <view class="movie_container">
+    <block wx:for="{{movieData}}" wx:key="index">
+      <c-movie-list title="{{item.title}}" list="{{item.list}}" class="movie_list" />
+    </block>
+  </view>
+</view>
+<!-- 搜索 -->
+<view class="search_container" wx:else>
+  <view class="search_box">
+    <icon size="20" type="search"></icon>
+    <input bind:confirm="onConfirm" type="text" focus />
+    <icon catchtap="onClear" size="20" type="clear"></icon>
+  </view>
+  <view class="search_list">
+    <block wx:for="{{searchList}}">
+      <c-movie movie="{{item}}" />
+    </block>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+<!--components/search/index.wxml-->
+<view class="search_container">
+  <block wx:for="{{searchList}}" wx:key="*this">
+    <view class="search_item">{{item}}</view>
+  </block>
+</view>

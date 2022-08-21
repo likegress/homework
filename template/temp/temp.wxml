@@ -1,0 +1,37 @@
+<wxs src="/utils/util.wxs" module="util"></wxs>
+<template name="book_item">
+  <view class="book_container">
+    <image src="{{imgSrc}}" class="book_img"></image>
+    <view class="book_info">
+      <view class="book_title">{{book_title}}</view>
+      <view class="hot">
+        <text>人气</text>
+        <block wx:for="{{util.getStarArr(stars)}}" wx:key="*this">
+          <image wx:if="{{item}}" src="/images/icon/star.png"></image>
+          <image wx:else src="/images/icon/no-star.png"></image>
+        </block>
+      </view>
+      <view class="book_summary">
+        {{util.sliceStr(summary,20)}}
+      </view>
+      <view class="author_box">
+        <view class="author">
+          <image src="/images/icon/author.png"></image>
+          <text>{{author}}</text>
+        </view>
+        <view class="add_book">
+          <image src="/images/icon/jia.png"></image>
+          <text>加入书架</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<template name="book_list">
+  <view hidden="{{hide}}">
+    <block wx:for="{{bookList}}" wx:key="bookId">
+      <template is="book_item" data="{{...item}}"></template>
+    </block>
+  </view>
+</template>

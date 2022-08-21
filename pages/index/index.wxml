@@ -1,0 +1,26 @@
+<!--图书选项卡作业-->
+<view class="container">
+  <view class="btns">
+    <block wx:for="{{['青春校园','文学作品','成功励志']}}" wx:key="*this">
+      <text bindtap="onTab" mark:index="{{index}}" class="{{index == tapIndex?'active':''}}">{{item}}</text>
+    </block>
+  </view>
+  <!-- 方式一:三个盒子控制显隐 -->
+  <import src="/template/temp/temp"></import>
+  <view class="contents">
+    <!-- 利用wx:if控制显隐 -->
+    <!-- <block wx:for="{{localData}}" wx:key="index" wx:for-index="key">
+      <template is="book_list" data="{{bookList:item}}" wx:if="{{keyArr[tapIndex] == key}}">
+      </template>
+    </block> -->
+
+    <!-- 利用hidden控制显隐 -->
+    <!-- <block wx:for="{{localData}}" wx:key="index" wx:for-index="key">
+      <template is="book_list" data="{{bookList:item,hide:key!=keyArr[tapIndex]}}">
+      </template>
+    </block> -->
+
+    <!-- 方式二:盒子中切换内容 -->
+    <template is="book_list" data="{{bookList}}"></template>
+  </view>
+</view>

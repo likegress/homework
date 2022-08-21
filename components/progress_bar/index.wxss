@@ -1,0 +1,31 @@
+/* components/progress_bar/index.wxss */
+.progress_container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.time {
+  width: 64rpx;
+  padding: 0 20rpx;
+}
+.control {
+  flex: 1;
+  position: relative;
+}
+.area {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  height: 8rpx;
+  top: -14rpx;
+  /* background: #000; */
+}
+.move {
+  width: 36rpx;
+  height: 36rpx;
+  background: #fff;
+  border-radius: 50%;
+}
+.time {
+  color: #fff;
+}

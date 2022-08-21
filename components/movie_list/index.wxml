@@ -1,0 +1,12 @@
+<!--components/movie_list/index.wxml-->
+<view class="movie_list">
+  <view bindtap="toMoreMovie" class="header">
+    <text class="title">{{title}}</text>
+    <text class="more"> 更多></text>
+  </view>
+  <view class="list">
+    <block wx:for="{{list}}" wx:key="index">
+      <c-movie-item movie="{{item}}" />
+    </block>
+  </view>
+</view>

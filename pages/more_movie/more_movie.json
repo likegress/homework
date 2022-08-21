@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-movie": "/components/movie_item"
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

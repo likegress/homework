@@ -1,0 +1,38 @@
+// 截取字符串
+function sliceStr(str, len) {
+  if (!str) {
+    return;
+  }
+  if (str.length > len) {
+    return str.slice(0, len) + "...";
+  } else {
+    return str;
+  }
+}
+function getStarArr(num) {
+  if (!num) return;
+  // 获取分数的十位数
+  var num2 = parseInt(num / 10);
+  var arr = []; //用来接收处理数据
+  for (var i = 0; i < num2; i++) {
+    arr.push(true);
+  }
+  // 数组中总共要5项元素,剩余的用false补齐
+  var len = 5 - arr.length;
+  for (var i = 0; i < len; i++) {
+    arr.push(false);
+  }
+  // console.log(arr);
+  return arr;
+}
+function setTime(time) {
+  if (!time) return;
+  var arr = time.toString().split("T");
+  var str = arr[1].slice(0, 8);
+  return arr[0] + str;
+}
+module.exports = {
+  sliceStr: sliceStr,
+  getStarArr: getStarArr,
+  setTime: setTime,
+};

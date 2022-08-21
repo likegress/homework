@@ -1,0 +1,10 @@
+<!--components/music_item/index.wxml-->
+<view class="music_item {{status?'active':''}}" bindtap="onMusicTap">
+  <text class="order">{{order}}</text>
+  <view class="name">
+    <text class="music_name">{{music.name}}</text>
+    <view class="singer_name">
+      {{music.singer}}-{{music.title}}
+    </view>
+  </view>
+</view>

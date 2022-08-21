@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "c-movie-list": "/components/movie_list",
+    "c-movie":"/components/movie_item"
+  },
+  "navigationBarTitleText": "光与影"
+}

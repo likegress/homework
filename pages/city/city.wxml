@@ -1,0 +1,46 @@
+<!--pages/city/city.wxml-->
+<view class="city_container">
+  <view class="header">
+    <icon type="search" size="18"></icon>
+    <input bindinput="onInput" type="text" placeholder="国内城市/区域" value="{{selectedVal}}" />
+  </view>
+  <view class="city_list" wx:if="{{!showSearch}}">
+                    <!-- 添加  跳转滚动条位置     -->
+    <scroll-view scroll-y scroll-top="{{scrollTop}}" bindscroll="onScroll">
+      <block wx:for="{{city}}" wx:key="letter">
+        <view class="city_cate">
+          <view class="title">
+            <text class="subTitle">{{item.letter}}</text>
+            <text class="line"></text>
+          </view>
+          <view class="list">
+            <block wx:for="{{item.cities}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="id">
+              <text bindtap="onSelectCity" mark:name="{{subItem.name}}" mark:outer="{{index}}" mark:inner="{{subIndex}}" class="city_item {{subIndex == innerIndex && index == outerIndex?'active':''}}">{{subItem.name}}</text>
+            </block>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <c-search wx:else selectedVal="{{selectedVal}}" />
+</view>
+
+<view class="fixed_list" hidden="{{showSearch}}">
+  <block wx:for="{{city}}" wx:key="index">
+    <view bindtap="onFixedTap" mark:index="{{index}}" class="fixed_item {{currentIndex == index?'active':''}}">{{item.letter}}</view>
+  </block>
+</view>
+
+<!-- 
+  作业总结: 
+     (1) 布局 + 数据渲染 : 双重for循环 (内层循环需要重命名)
+     (2) 双重for循环的选项卡:判断条件必须满足外层循环和内层循环下标都一致
+     (3) 点击城市给input 框赋值 :拿到 点击城市名字(mark)赋值给input的value属性
+     (4) 右侧控制左侧 : 拿到右侧点击项的下标,设置左侧的滚动距离(scroll-view 组件的 scroll-top="{{scrollTop}}" 属性)
+     (5) 左侧滚动控制右侧高亮: 绑定scroll-view组件的滚动事件 bindscroll="onScroll" 
+        在事件对象中获取滚动高度 e.detail.scrollTop,根据该滚动高度查找所在区间下标
+        右侧对应下标的元素高亮
+     (6) 通过输入关键字搜索城市 :根据是否由输入内容控制搜索界面的显示与隐藏,
+     当输入的关键字发生改变查找包含该关键字的城市,绑定到页面上
+     (observer函数)
+-->

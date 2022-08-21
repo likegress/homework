@@ -1,0 +1,21 @@
+<!--pages/music/music.wxml-->
+<view class="music_list">
+  <block wx:for="{{musicList}}" wx:key="_id">
+    <c-music order="{{index+1}}" music="{{item}}" bind:musicTap="onMusicTap" status="{{curIndex == index}}" />
+  </block>
+</view>
+
+<!-- 
+    总结: (伪代码--思路)
+      1.music页面
+        (1)封装云函数操作云数据库查询数据歌单数据,music页面调用云函数获取歌单列表->绑定到页面
+        (2)将歌单列表存入缓存(便于上一首歌和下一首歌的获取)
+      2.点击歌曲跳转播放器页面(player页面) --- 传递的参数为下标index
+        _loadMusic(){
+          拿到缓存歌曲列表->找当前下标对应的歌曲->设置bgm.title / src
+        }
+        按钮控制音乐的播放与暂停(bgm:play/pause  isPlaying:true/false)
+        按钮控制播放上一首歌曲(index--:第一首歌的上一首是最后一首歌曲)   _loadMusic(index)
+        按钮控制播放下一首歌曲(index++:最后一首歌的下一首是第一首歌曲)   _loadMusic(index)
+
+ -->

@@ -1,0 +1,11 @@
+<!--components/progress_bar/index.wxml-->
+<view class="progress_container">
+  <text class="time">{{currentTime}}</text>
+  <view class="control">
+    <movable-area class="area">
+      <movable-view class="move" direction="horizontal" x="{{x}}" bindchange="onChange" bindtouchend="onTouchEnd"></movable-view>
+    </movable-area>
+    <progress stroke-width="4" percent="{{precent}}" backgroundColor="#ccc" activeColor="#f00"></progress>
+  </view>
+  <text class="time">{{duration}}</text>
+</view>

@@ -1,0 +1,10 @@
+/* components/star/index.wxss */
+.star_container {
+  display: flex;
+  align-items: center;
+}
+.star_container image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 4rpx;
+}

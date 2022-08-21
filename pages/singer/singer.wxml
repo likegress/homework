@@ -1,0 +1,22 @@
+<!--pages/singer/singer.wxml-->
+<view class="singer_container">
+  <block wx:for="{{singerList}}" wx:key="title">
+    <view class="singer_box">
+      <view class="title">{{item.title}}</view>
+      <view class="list">
+        <block wx:for="{{item.list}}" wx:for-item="subItem" wx:key="id">
+          <view class="item">
+            <image src="{{subItem.pic}}" class="img"></image>
+            <text class="name">{{subItem.name}}</text>
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
+<!-- 右侧固定导航栏 -->
+<view class="fixed_nav">
+  <block wx:for="{{singerList}}" wx:key="title">
+    <view bindtap="onTap" mark:index="{{index}}" class="title {{index == currentIndex?'active':''}}">{{item.title}}</view>
+  </block>
+</view>

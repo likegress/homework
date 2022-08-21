@@ -1,0 +1,5 @@
+<view class="list">
+  <block wx:for="{{movieList}}" wx:key="id">
+    <c-movie movie="{{item}}" />
+  </block>
+</view>

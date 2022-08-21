@@ -1,0 +1,31 @@
+<view class="star_container">
+  <block wx:for="{{tool.getStarArr(stars)}}" wx:key="index">
+    <image src="/imgs/icon/star.png" wx:if="{{item ==1}}"></image>
+    <image src="/imgs/icon/ban-star.png" wx:elif="{{item ==2}}"></image>
+    <image src="/imgs/icon/none-star.png" wx:else></image>
+  </block>
+</view>
+<wxs module="tool">
+  function getStarArr(str) {
+    if (!str) return;
+    var arr = [];
+    // 整星的个数
+    var num = parseInt(str / 10)
+    for (var i = 0; i < num; i++) {
+      arr.push(1);
+    }
+    // 是否含有半星
+    var num1 = str % 10; //个位数
+    if (num1 >= 5) {
+      arr.push(2)
+    }
+    // 总共5颗星,剩余均是没星
+    while (arr.length < 5) {
+      arr.push(0)
+    }
+    return arr;
+  }
+  module.exports = {
+    getStarArr: getStarArr
+  }
+</wxs>

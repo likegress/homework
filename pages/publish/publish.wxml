@@ -1,0 +1,21 @@
+<!--pages/publish/publish.wxml-->
+<!-- 朋友圈发布界面 -->
+<view class="header_container">
+  <button type="warn" size="mini" bindtap="toBack">取消</button>
+  <button type="primary" size="mini" bindtap="onPublish">发表</button>
+</view>
+<!-- 文本域默认的最大字数限制140个字符,想修改设置maxlength属性 -->
+<textarea bindinput="onInput" class="textarea" maxlength="100" placeholder="这一刻的想法..." placeholder-class="xiangfa" name="" id="" cols="30" rows="10"></textarea>
+
+<!-- 上传图片展示区域 -->
+<view class="img_container">
+  <block wx:for="{{imgs}}" wx:key="*this">
+    <view class="img_wrap">
+      <image bindtap="onPreviewImg" mark:src="{{item}}" src="{{item}}"></image>
+      <text bindtap="onDel" mark:index="{{index}}" class="iconfont icon-shanchu2 del"></text>
+    </view>
+  </block>
+  <view class="img_wrap" bindtap="onChooesImg" hidden="{{imgs.length==9}}">
+    <i class="iconfont icon-jiahao"></i>
+  </view>
+</view>

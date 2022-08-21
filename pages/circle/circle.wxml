@@ -1,0 +1,6 @@
+<!--pages/circle/circle.wxml-->
+<button type="primary" bindtap="onTap">发一条朋友圈</button>
+<!-- 朋友圈内容提示 -->
+<block wx:for="{{circleArr}}" wx:key="_id">
+  <c-card cardData="{{item}}"/>
+</block>

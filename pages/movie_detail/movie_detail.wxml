@@ -1,0 +1,72 @@
+<!--pages/movie_detail/movie_detail.wxml-->
+<view class="header">
+  <image mode="aspectFill" src="{{images.large}}" class="img"></image>
+  <view class="info_box">
+    <view class="title">{{title}}</view>
+    <view class="year">
+      {{util.joinStr(countries,".")}}·{{year}}
+    </view>
+    <view class="like">
+      <text>{{wish_count}}</text>人喜欢
+      <text>{{comments_count}}</text>人评论
+    </view>
+  </view>
+  <image bindtap="previewImg" class="right_img" src="{{images.large}}"></image>
+</view>
+
+<view class="detail">
+  <view class="title">{{title}}</view>
+  <view class="box">
+    <text>评分</text>
+    <c-star stars="{{rating.stars}}"></c-star>
+  </view>
+  <view class="box">
+    <text>导演</text>
+    <text>{{util.fn(directors)}}</text>
+  </view>
+  <view class="box">
+    <text>影人</text>
+    <text>{{util.fn(casts)}}</text>
+  </view>
+  <view class="box">
+    <text>类型</text>
+    <text>{{util.joinStr(genres,"、")}}</text>
+  </view>
+</view>
+<view class="wrap">
+  <view class="title">剧情简介</view>
+  <view class="summary" wx:if="{{summary}}">{{summary}}</view>
+  <view class="summary" wx:else>暂无简介</view>
+</view>
+<view class="wrap">
+  <view class="title">影人</view>
+  <scroll-view scroll-x>
+  <!-- scroll-view  不支持弹性盒子 -->
+    <view class="casts_box">
+      <block wx:for="{{casts}}" wx:key="name">
+        <view class="cast">
+          <image src="{{item.avatars.large}}"></image>
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </scroll-view>
+</view>
+<wxs module="util">
+  function joinStr(arr, f) {
+    if (!arr) return;
+    return arr.join(f);
+  }
+  function arrToString(arr) {
+    if (!arr) return;
+    // 将所有人的名字组成一个新的数组
+    var newArr = arr.map(function (item) {
+      return item['name']
+    })
+    return newArr.join('/')
+  }
+  module.exports = {
+    fn: arrToString,
+    joinStr: joinStr
+  }
+</wxs>

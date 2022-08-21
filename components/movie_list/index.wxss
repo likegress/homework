@@ -1,0 +1,23 @@
+/* components/movie_list/index.wxss */
+
+.movie_list {
+  width: 100vw;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 30rpx;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+}
+.more {
+  font-size: 30rpx;
+  color: #1f4da5;
+}
+.list {
+  display: flex;
+  justify-content: space-between;
+}

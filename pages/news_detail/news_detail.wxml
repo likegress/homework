@@ -1,0 +1,19 @@
+<!--pages/news_detail/news_detail.wxml-->
+<view class="container">
+  <view class="haed">
+    <image src="{{imgSrc}}" class="img"></image>
+    <image bindtap="onMusic" src="{{isPlaying?playImg:pauseImg}}" class="musicImg"></image>
+  </view>
+  <view class="author_box">
+    <image src="{{avatar}}" class="avatar"></image>
+    <text class="author">{{author}}</text>
+    <text>发表于</text>
+    <text class="date">{{dateTime}}</text>
+  </view>
+  <view class="title">{{title}}</view>
+  <view class="line">
+    <image bindtap="onCol" src="{{isCollected?collImg:noColImg}}"></image>
+    <image src="/imgs/icon/share.png"></image>
+  </view>
+  <view class="summary">{{detail}}</view>
+</view>

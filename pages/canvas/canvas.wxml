@@ -1,0 +1,3 @@
+<!--pages/canvas/canvas.wxml-->
+<canvas type="2d" class="myCanvas"></canvas>
+<canvas type="2d" class="myCanvas1"></canvas>

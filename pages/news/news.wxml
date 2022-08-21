@@ -1,0 +1,21 @@
+<!--pages/news/news.wxml-->
+<!-- 引入模板文件 -->
+<import src="/template/news/news"></import>
+
+<swiper indicator-dots indicator-color="#fff" indicator-active-color="red" circular class="swiper">
+  <swiper-item bindtap="toDetail" mark:postId="{{0}}">
+    <image src="/imgs/post/bl.png"></image>
+  </swiper-item>
+  <swiper-item bindtap="toDetail" mark:postId="{{1}}">
+    <image src="/imgs/post/crab.png"></image>
+  </swiper-item>
+  <swiper-item bindtap="toDetail" mark:postId="{{3}}">
+    <image src="/imgs/post/xiaolong.jpg"></image>
+  </swiper-item>
+</swiper>
+
+<view class="newsList">
+  <block wx:for="{{newsData}}" wx:key="postId">
+    <template is="news" data="{{...item}}"></template>
+  </block>
+</view>

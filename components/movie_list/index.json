@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "c-movie-item":"/components/movie_item"
+  }
+}
